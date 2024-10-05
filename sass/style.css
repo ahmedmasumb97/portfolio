@@ -66,55 +66,6 @@
   text-align: center;
 }
 
-/* Responsive styles */
-@media (max-width: 768px) {
-  /* For tablets and smaller devices */
-  .navbar-nav {
-    padding: 0;
-    /* Remove padding if necessary */
-  }
-  .navbar-item {
-    display: block;
-    /* Make list items block for smaller screens */
-    margin: 10px 0;
-    /* Add some margin for spacing */
-  }
-  .but {
-    font-size: 14px;
-    /* Adjust font size */
-    padding: 3px 0;
-    /* Reduce padding */
-    background-size: 300% 100%;
-    /* Increase background size for smaller screens */
-  }
-  .but:before {
-    bottom: -2px;
-    /* Adjust position for smaller text */
-    height: 2px;
-    /* Reduce the height of the underline */
-  }
-}
-@media (max-width: 480px) {
-  /* For mobile phones */
-  .navbar-item {
-    display: block;
-    /* Ensure list items are block for small devices */
-    margin: 8px 0;
-    /* Adjust margin for smaller devices */
-  }
-  .but {
-    font-size: 12px;
-    /* Further reduce font size for small screens */
-    padding: 2px 0;
-    background-size: 400% 100%;
-    /* Further increase background size for animation effect */
-  }
-  .but:before {
-    bottom: -1px;
-    /* Adjust underline for even smaller text */
-    height: 1px;
-  }
-}
 * {
   margin: 0;
   box-sizing: border-box;
@@ -342,6 +293,7 @@ input-group[type=search]::placeholder {
   font-size: 1.2rem;
   letter-spacing: 1.4px;
   background-color: transparent;
+  color: #F1F3C2;
 }
 
 .experiences-container {
@@ -654,7 +606,7 @@ label {
 }
 
 .media-title {
-  color: #010140;
+  color: #F1F3C2;
   opacity: 0.7;
   font-size: 1.2rem;
   letter-spacing: 2px;
