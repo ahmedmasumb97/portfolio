@@ -66,6 +66,55 @@
   text-align: center;
 }
 
+/* Responsive styles */
+@media (max-width: 768px) {
+  /* For tablets and smaller devices */
+  .navbar-nav {
+    padding: 0;
+    /* Remove padding if necessary */
+  }
+  .navbar-item {
+    display: block;
+    /* Make list items block for smaller screens */
+    margin: 10px 0;
+    /* Add some margin for spacing */
+  }
+  .but {
+    font-size: 14px;
+    /* Adjust font size */
+    padding: 3px 0;
+    /* Reduce padding */
+    background-size: 300% 100%;
+    /* Increase background size for smaller screens */
+  }
+  .but:before {
+    bottom: -2px;
+    /* Adjust position for smaller text */
+    height: 2px;
+    /* Reduce the height of the underline */
+  }
+}
+@media (max-width: 480px) {
+  /* For mobile phones */
+  .navbar-item {
+    display: block;
+    /* Ensure list items are block for small devices */
+    margin: 8px 0;
+    /* Adjust margin for smaller devices */
+  }
+  .but {
+    font-size: 12px;
+    /* Further reduce font size for small screens */
+    padding: 2px 0;
+    background-size: 400% 100%;
+    /* Further increase background size for animation effect */
+  }
+  .but:before {
+    bottom: -1px;
+    /* Adjust underline for even smaller text */
+    height: 1px;
+  }
+}
 * {
   margin: 0;
   box-sizing: border-box;
@@ -73,6 +122,15 @@
   font-family: Fredoka, inter, sans-serif;
   list-style: none;
   text-decoration: none;
+}
+
+body {
+  background-color: #010140;
+  color: #FF8C9E;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 #container {
@@ -88,6 +146,7 @@
   position: sticky;
   top: 0;
   width: 100%;
+  background-color: transparent;
   z-index: 9999;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
@@ -379,6 +438,7 @@ input-group[type=search]::placeholder {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   margin: 10px;
   padding: 14px;
+  background-color: #F1F3C2;
 }
 
 .skill-title {
@@ -425,6 +485,7 @@ input-group[type=search]::placeholder {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   margin: 10px auto;
   padding: 14px 13px;
+  background-color: #F1F3C2;
 }
 
 .protfolio-image {
@@ -697,7 +758,7 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-content: space-around;
+    align-content: center;
     gap: 15px;
     padding: 10px;
   }
@@ -773,5 +834,33 @@ footer {
     justify-content: center;
     align-items: center;
     min-height: 500px;
+  }
+  .but {
+    background-image: linear-gradient(to right, #E90074, #37B7C3 50%, #6EC207 50%);
+    background-size: 200% 100%;
+    background-position: -100%;
+    display: inline-block;
+    padding: 5px 0;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+  }
+  .but:before {
+    content: "";
+    background: #FF8C9E;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: all 0.3s ease-in-out;
+  }
+  .but:hover {
+    background-position: 0;
+  }
+  .but:hover::before {
+    width: 100%;
   }
 }/*# sourceMappingURL=style.css.map */

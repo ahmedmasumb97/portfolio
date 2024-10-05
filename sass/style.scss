@@ -1,5 +1,13 @@
 @import 'paritails';
 
+body {
+    background-color: $textColor4;
+    color: $textRed;
+}
+
+html {
+    scroll-behavior: smooth;
+}
 
 
 #container {
@@ -405,6 +413,7 @@ input-group[type='search']::placeholder {
     box-shadow: $boxShadow2;
     margin: 10px;
     padding: 14px;
+    background-color: $textColor;
 }
 
 
@@ -415,6 +424,9 @@ input-group[type='search']::placeholder {
 
 
 }
+
+
+
 
 #subkill-title,
 #protfolio-title,
@@ -465,7 +477,8 @@ input-group[type='search']::placeholder {
 // protfolio
 
 .protfolio-content {
-    @extend .boxGrid1
+    @extend .boxGrid1;
+
 }
 
 
@@ -480,6 +493,7 @@ input-group[type='search']::placeholder {
     box-shadow: $boxShadow2;
     margin: 10px auto;
     padding: 14px 13px;
+    background-color: $textColor;
 
 }
 
@@ -833,9 +847,10 @@ footer {
         display: flex;
         flex-direction: row;
         justify-content: center;
-        align-content: space-around;
+        align-content: center;
         gap: 15px;
         padding: 10px;
+
     }
 
     ;
@@ -977,6 +992,48 @@ footer {
 
 
     }
+
+
+
+
+
+
+    .but {
+        background-image: linear-gradient(to right,
+                $textColor6,
+                $textColor7 50%,
+                $textColor9 50%);
+        background-size: 200% 100%;
+        background-position: -100%;
+        display: inline-block;
+        padding: 5px 0;
+        position: relative;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .but:before {
+        content: '';
+        background: $textRed;
+        display: block;
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 0;
+        height: 3px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .but:hover {
+        background-position: 0;
+    }
+
+    .but:hover::before {
+        width: 100%;
+    }
+
+
 
 
 

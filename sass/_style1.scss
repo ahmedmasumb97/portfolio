@@ -96,6 +96,7 @@
     position: sticky;
     top: 0;
     width: 100%;
+    background-color: transparent;
     z-index: 9999;
     backdrop-filter: blur(10px);
 
@@ -404,3 +405,103 @@
 // p{
 //     @include setFontSize(medium)
 // }
+
+
+
+
+// .but {
+//     background-image: linear-gradient(to right,
+//             $textColor6,
+//             $textColor7 50%,
+//             $textColor9 50%);
+//     background-size: 200% 100%;
+//     background-position: -100%;
+//     display: inline-block;
+//     padding: 5px 0;
+//     position: relative;
+//     -webkit-background-clip: text;
+//     -webkit-text-fill-color: transparent;
+//     transition: all 0.3s ease-in-out;
+// }
+
+// .but:before {
+//     content: '';
+//     background: $textRed;
+//     display: block;
+//     position: absolute;
+//     bottom: -3px;
+//     left: 0;
+//     width: 0;
+//     height: 3px;
+//     transition: all 0.3s ease-in-out;
+// }
+
+// .but:hover {
+//     background-position: 0;
+// }
+
+// .but:hover::before {
+//     width: 100%;
+// }
+
+
+
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+
+    /* For tablets and smaller devices */
+    .navbar-nav {
+        padding: 0;
+        /* Remove padding if necessary */
+    }
+
+    .navbar-item {
+        display: block;
+        /* Make list items block for smaller screens */
+        margin: 10px 0;
+        /* Add some margin for spacing */
+    }
+
+    .but {
+        font-size: 14px;
+        /* Adjust font size */
+        padding: 3px 0;
+        /* Reduce padding */
+        background-size: 300% 100%;
+        /* Increase background size for smaller screens */
+    }
+
+    .but:before {
+        bottom: -2px;
+        /* Adjust position for smaller text */
+        height: 2px;
+        /* Reduce the height of the underline */
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* For mobile phones */
+    .navbar-item {
+        display: block;
+        /* Ensure list items are block for small devices */
+        margin: 8px 0;
+        /* Adjust margin for smaller devices */
+    }
+
+    .but {
+        font-size: 12px;
+        /* Further reduce font size for small screens */
+        padding: 2px 0;
+        background-size: 400% 100%;
+        /* Further increase background size for animation effect */
+    }
+
+    .but:before {
+        bottom: -1px;
+        /* Adjust underline for even smaller text */
+        height: 1px;
+    }
+}
