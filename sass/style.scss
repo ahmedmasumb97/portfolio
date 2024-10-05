@@ -1,26 +1,14 @@
-* {
-    margin: 0;
-    box-sizing: border-box;
-    padding: 0;
-    font-family: Fredoka, inter, sans-serif;
-    list-style: none;
+@import 'paritails';
 
 
-}
-
-// <uniquifier>: Use a unique and descriptive class name
-// <weight>: Use a value from 300 to 700
 
 #container {
 
-    padding: 40px;
-    margin: 20px auto;
-    max-width: 1360px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    @include container_style
 }
 
 
+// Helvetica
 
 
 
@@ -33,31 +21,31 @@
 
 
 .nav {
-    border-bottom: 1px solid #eee;
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 9999;
-    backdrop-filter: blur(10px);
+    @include nav_style
+}
 
+;
+
+.header-title {
+    color: $textColor6;
+    @include setPadding(small);
+    background-color: $bgnav2;
+    box-shadow: $boxShadow5;
+    border-radius: 5px;
+    margin-left: 5px;
+    letter-spacing: 2px;
 }
 
 .navbar {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 
 
-
+    @extend .boxColumn
 }
 
 
 
 .navbar-brand {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @extend .boxRow;
     margin: 20px;
 }
 
@@ -86,22 +74,11 @@
 
 
 .nav-link {
-    display: block;
-    text-align: center;
-    text-decoration: none;
-    line-height: 40px;
-    font-size: 1.3rem;
+    @include display_block
 }
 
 ;
 
-.navbar-toggler {
-
-    background-color: blue;
-    margin: 5px;
-    cursor: pointer;
-    ;
-}
 
 .navbar-toggler>i {
     font-size: 2.2rem;
@@ -113,28 +90,23 @@
 
 input[type='search'],
 input-group[type='search']:focus {
-    padding: 10px;
-    border-radius: 5px;
-    margin-right: 10px;
-    border: 1px solid #2806be;
+    @include input_search
 }
 
 input-group[type='search']::placeholder {
-    color: #041783;
+    color: $textColor4;
 }
 
 
 //hero container
 
 .hero-container {
-    background-image: url('https://img.freepik.com/free-photo/rear-view-programmer-working-all-night-long_1098-18697.jpg?w=996&t=st=1727873880~exp=1727874480~hmac=2b3f6770ca58a39c96a5c1b9160f9c83c5c29df2d81809228157e2b612e98647');
+    background-image: url('/asset/image/bg1.jpg');
     background-size: cover;
     background-position: center;
     min-height: 400px;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @extend .boxRow;
     position: relative;
     z-index: 99;
 
@@ -143,14 +115,7 @@ input-group[type='search']::placeholder {
 ;
 
 .hero-container::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.199);
-    z-index: 98;
+    @include after_style
 }
 
 
@@ -160,8 +125,8 @@ input-group[type='search']::placeholder {
 .hero-subtitle {
     font-size: 1.3rem;
     margin-bottom: 20px;
-    color: rgb(255, 255, 255);
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    color: $textColor;
+    text-shadow: $fontShadow3;
     text-align: center
 }
 
@@ -172,24 +137,21 @@ input-group[type='search']::placeholder {
 }
 
 .button-common {
-    width: 100px;
-    text-align: center;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    margin: 10px
+    @include btn_style
 }
 
 
 .hero-btn-one {
     @extend .button-common;
-    background-color: blue;
+    background-color: $btnColor1;
+    color: $textColor
 }
 
 
 .hero-btn-two {
     @extend .button-common;
-    background-color: green;
+    background-color: $btnColor2;
+    color: $textColor
 }
 
 
@@ -202,12 +164,9 @@ input-group[type='search']::placeholder {
 
 
 .about-subcontainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 15px;
-    padding: 10px;
+    @extend .boxColumn;
+    @include paraStyleleft;
+    color: $textColor7
 }
 
 ;
@@ -222,10 +181,7 @@ input-group[type='search']::placeholder {
 }
 
 .about-container-right-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+    @include img_block
 }
 
 
@@ -234,17 +190,13 @@ input-group[type='search']::placeholder {
 // resume
 
 .resume-sub-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-
+    @extend .boxColumBwt
 }
 
 .resume-container-left {
 
     flex-basis: 100%;
-    box-shadow: 1px 3px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: $boxShadow7;
 }
 
 .resume-container-right {
@@ -252,35 +204,12 @@ input-group[type='search']::placeholder {
 }
 
 
-.resume-container-left {
-    width: 590px;
-    height: 700px;
-    line-height: 40px;
-}
-
-
-.resume-container-left-img {
-
-    height: 50%;
-    width: 100%;
-}
-
-.resume-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
 
 
 
 .resume-title h1 {
 
-    font-size: 2rem;
-    margin: 15px 0;
-    font-weight: 500px;
-    text-align: center;
-    letter-spacing: 1.5px;
+    @include paraStyleHeaderCenter;
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 
 
@@ -291,16 +220,13 @@ input-group[type='search']::placeholder {
     font-size: 1.2rem;
     margin: 15px 0;
     font-weight: 400;
-    color: green;
+    color: $textGreen;
     text-align: center;
 }
 
 
 .social-media-icon {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    @extend .boxRow;
     margin-bottom: 30px;
 
 }
@@ -315,7 +241,7 @@ input-group[type='search']::placeholder {
 ;
 
 .resume-btn-group {
-    border-top: 2px solid #eee;
+    border-top: 2px solid $textColor;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -338,29 +264,25 @@ input-group[type='search']::placeholder {
 ;
 
 .resume-container-expertisions {
-    display: flex;
-    flex-direction: column;
+    @extend .boxColumn
 }
 
 
 .resume-content {
-    display: flex;
-    flex-direction: row;
-
+    @extend .boxColumn
 }
 
 
 .experiences-container {
-    display: block;
-    flex-direction: column;
+
     line-height: 40px;
     padding: 0 16px;
 }
 
 .experiences-container>div {
 
-    border-bottom: 1px solid #eee;
-    box-shadow: 2px #eee;
+    border-bottom: 1px solid $textColor;
+    box-shadow: 2px $textColor;
 
 }
 
@@ -385,26 +307,26 @@ input-group[type='search']::placeholder {
 ;
 
 .resume-container-title h1::first-letter {
-    color: green;
-    font-weight: 90;
+    color: $textColor6;
+    font-weight: 900;
+    text-shadow: $fontShadow6;
+    @include setFontSize(large);
+}
+
+.resume-container-title h1 {
+    color: $textGreen;
+
 }
 
 .experience-title {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    gap: 10px;
-    margin: 10px 0px;
-    padding-bottom: 50px;
-
-
+    @extend .boxRowStr
 }
 
 .experience-title i,
 .experience-title h1 {
     font-size: 2rem;
     margin-right: 5px;
-    color: green;
+    color: $textColor9;
 }
 
 
@@ -412,10 +334,10 @@ input-group[type='search']::placeholder {
 
 
 .experience-btns>button {
-    border: 1px solid green;
+    border: 1px solid $textColor2;
     padding: 5px;
     background-color: transparent;
-    color: green;
+    color: $textColor6;
     border-radius: 5px;
     font-size: 13px;
 }
@@ -440,12 +362,12 @@ input-group[type='search']::placeholder {
 ;
 
 #ex-btn1 {
-    border: 2px solid #eee;
-    color: black;
-    background-color: #cccccc54;
+    border: 2px solid $textBlue;
+    color: $textColor8;
+    background-color: $btnColor2;
     padding: 5px;
     border-radius: 5px;
-    opacity: 0.6;
+    opacity: 0.5;
 
 }
 
@@ -455,12 +377,16 @@ input-group[type='search']::placeholder {
 // skill design here
 
 
+.skill-container {
+    margin-top: 30px;
+}
+
 .skill-content-title h1 {
     font-size: 2rem;
     margin-bottom: 10px;
     font-weight: 600;
     text-align: center;
-    color: #041783
+    color: $textColor3
 }
 
 ;
@@ -475,8 +401,8 @@ input-group[type='search']::placeholder {
 ;
 
 .skills {
-    border: 1px solid #eee;
-    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.1);
+    border: 1px solid $boxShadow8;
+    box-shadow: $boxShadow2;
     margin: 10px;
     padding: 14px;
 }
@@ -490,6 +416,16 @@ input-group[type='search']::placeholder {
 
 }
 
+#subkill-title,
+#protfolio-title,
+#certification-title {
+    color: $textGreen;
+    text-shadow: $fontShadow5;
+    @include setFontSize(xxlarge);
+    text-transform: uppercase
+}
+
+;
 
 .skill-icon i {
     font-size: 2.4rem;
@@ -506,17 +442,17 @@ input-group[type='search']::placeholder {
     font-size: .8rem;
     font-weight: 700;
     margin-bottom: 15px;
-    color: rgb(58, 83, 224);
+    color: $textColor6;
 }
 
 .skill-text {
     font-size: 12px;
-    color: #585858;
+    color: $textBlue;
     opacity: .7;
 }
 
 .skill-progress-bar progress {
-    width: 200px;
+    max-width: 200px;
     padding: 10px;
 }
 
@@ -529,28 +465,19 @@ input-group[type='search']::placeholder {
 // protfolio
 
 .protfolio-content {
-    display: grid;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-    justify-content: center;
-    align-content: center;
-    gap: 15px;
+    @extend .boxGrid1
 }
 
 
 .portfolio-content-title {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    @extend .boxColumn
 }
 
 
 .protfolio-item {
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     overflow: hidden;
-    box-shadow: 1px 2px 2px 2px #56f80b77;
+    box-shadow: $boxShadow2;
     margin: 10px auto;
     padding: 14px 13px;
 
@@ -563,10 +490,7 @@ input-group[type='search']::placeholder {
 }
 
 .protfolio-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-
+    @include img_block
 }
 
 ;
@@ -592,18 +516,12 @@ input-group[type='search']::placeholder {
 }
 
 .line {
-    background-color: rgb(226, 226, 226);
-    height: 3px;
-    width: 150px;
-    margin: 0 auto;
-    position: relative;
-    border-radius: 4px;
-    margin-bottom: 45px;
+    @include line_style($color: $textColor7);
 }
 
 .inner-line {
     position: absolute;
-    background-color: #db2929a4;
+    background-color: $textColor6;
     height: 3px;
     width: 60%;
 
@@ -611,14 +529,12 @@ input-group[type='search']::placeholder {
 
 
 .certificate-card {
-    display: grid;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-    grid-gap: 15px;
+    @extend .boxGrid1
 }
 
 .card {
     display: flex;
-    border: 3px solid #f5ecec;
+    border: 3px solid $textColor;
     transition: transform 0.4s ease;
 
 
@@ -632,7 +548,7 @@ input-group[type='search']::placeholder {
 ;
 
 .card-img {
-    background-color: gray;
+    background-color: $bg2;
     margin: 0 auto;
     flex-basis: 50%;
     display: flex;
@@ -651,13 +567,13 @@ input-group[type='search']::placeholder {
 .card-description {
     line-height: 25px;
     padding: 14px 12px;
-    background-color: #7070709a;
+    background-color: $textColor;
     flex-basis: 50%;
 }
 
 .card-description h3 {
     font-size: 13px;
-    color: white;
+    color: $textColor;
 }
 
 .card-description p {
@@ -672,11 +588,7 @@ input-group[type='search']::placeholder {
 
 
 .contact-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-
+    @extend .boxColumn
 }
 
 
@@ -690,7 +602,7 @@ input-group[type='search']::placeholder {
 .contact-form-title h1 {
     font-size: 2rem;
     text-align: center;
-    color: rebeccapurple;
+    color: $textColor6;
 
 
 
@@ -717,9 +629,9 @@ input[type='email'] {
     width: 90%;
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid $textBlue;
     margin-right: 5px;
-    border: 1px solid blue;
+    border: 1px solid $textGreen;
 }
 
 ;
@@ -728,22 +640,13 @@ input[type='email'] {
 
 
 textarea {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    margin-right: 5px;
-    min-height: 150px;
-    resize: none;
-    color: blue;
-    font-size: 1.1rem;
-    border: 1px solid blue
+    @include textarea
 }
 
 label {
     margin-bottom: 24px;
-    opacity: 0.7;
-    color: rgba(0, 102, 255, 0.623);
+    opacity: 0.8;
+    color: $textColor9
 }
 
 
@@ -759,14 +662,14 @@ label {
 }
 
 .form-btn-group button:first-child {
-    background-color: red;
-    color: white;
+    background-color: $btnColor1;
+    color: $textColor;
     font-size: 1.1rem;
 }
 
 .form-btn-group button:last-child {
-    background-color: green;
-    color: white;
+    background-color: $btnColor2;
+    color: $textColor;
     font-size: 1.1rem;
 }
 
@@ -779,15 +682,15 @@ label {
 
 .social-media-icon1 i {
     font-size: 1.5rem;
-    color: white;
-    background-color: red;
+    color: $textColor;
+    background-color: $textColor6;
     padding: 5px;
     border-radius: 5px;
     vertical-align: middle;
 }
 
 .media-title {
-    color: #041783;
+    color: $textColor4;
     opacity: .7;
     font-size: 1.2rem;
     letter-spacing: 2px;
@@ -795,10 +698,7 @@ label {
 
 
 .contact-address {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
+    @extend .boxColumn;
     width: 100%;
     height: 100%;
     padding: 15px 10px;
@@ -810,7 +710,7 @@ label {
 .contact-address-title,
 .contact-address-info,
 .map-title {
-    color: indigo;
+    color: $textColor6;
     text-align: center;
     line-height: 50px;
     margin-top: 10px;
@@ -821,10 +721,7 @@ label {
 .contact-google-map {
     max-width: 100%;
     height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @extend .boxColumn;
 
 }
 
@@ -847,13 +744,11 @@ label {
 /* footer */
 footer {
     margin: 70px 20px;
+    color: $headerText3;
 }
 
 .footer--content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @extend .boxColumn;
 
 }
 
@@ -861,6 +756,7 @@ footer {
 .footer--content div {
     flex-basis: 24%;
     line-height: 35px;
+    margin-left: 10px;
 }
 
 
@@ -878,37 +774,14 @@ footer {
 
 
 .footer-emial--form input[type="email"] {
-    width: 70%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 10px;
-
+    @include input_search
 }
 
 .footer-emial--form button {
-    border: none;
-    padding: 11px;
-    background-color: rgba(20, 240, 20, 0.904);
-    color: white;
-    font-weight: 900;
-    border-radius: 5px;
-    margin-top: 10px;
-    margin-left: -5.5px;
+    @include btn_style;
+    background-color: $btnColor1;
+    color: $textColor;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -923,12 +796,7 @@ footer {
     // navbar
 
     .navbar {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-content: center;
-        border: 1px solid #ccc;
-        padding: 15px
+        @include nav_style1
     }
 
     ;
@@ -940,20 +808,13 @@ footer {
 
 
     .navbar-item {
-        list-style: none;
-        border: none;
-        display: inline-block;
-        margin-right: 15px;
+        @include navitem
     }
 
     ;
 
     .nav-link {
-
-        text-align: center;
-        text-decoration: none;
-        font-size: 1.3rem;
-        display: inline;
+        @include navlink
     }
 
     ;
@@ -1093,10 +954,30 @@ footer {
     .resume-sub-container {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
 
     }
+
+
+    .resume-container-left {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 600px;
+    }
+
+
+    .resume-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        min-height: 500px;
+
+
+    }
+
 
 
 

@@ -1,0 +1,406 @@
+.boxRow {
+    display: flex;
+    flex: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.boxColumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+;
+
+.boxColumBwt {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.boxRowStr {
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0px;
+    padding-bottom: 50px;
+
+}
+
+;
+
+.boxRowaround {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: space-around;
+    gap: 15px;
+    padding: 10px;
+}
+
+;
+
+.boxGrid1 {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    justify-content: center;
+    align-content: center;
+    gap: 15px;
+}
+
+;
+
+.boxGrid2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-content: center;
+    align-content: center;
+    gap: 15px;
+}
+
+;
+
+
+.boxGrid3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    justify-content: center;
+    align-content: center;
+    gap: 15px;
+}
+
+;
+
+.boxMargin {
+    margin: 10px auto;
+    text-align: center;
+
+}
+
+;
+
+// styles collection
+
+
+@mixin nav_style {
+
+    border-bottom: 1px solid $textColor2;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    backdrop-filter: blur(10px);
+
+}
+
+@mixin nav_style1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    border: 1px solid #ccc;
+    padding: 15px;
+}
+
+@mixin navitem {
+
+    list-style: none;
+    border: none;
+    display: inline-block;
+    margin-right: 15px;
+
+}
+
+;
+
+@mixin navlink {
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.3rem;
+    display: inline;
+}
+
+;
+
+@mixin display_block {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    line-height: 40px;
+    font-size: 1.3rem;
+}
+
+@mixin input_search {
+    padding: 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+    border: 1px solid #2806be;
+}
+
+;
+
+
+@mixin textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 5px;
+    min-height: 150px;
+    resize: none;
+    color: blue;
+    font-size: 1.1rem;
+    border: 1px solid $bgnav2
+}
+
+;
+
+@mixin after_style {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.199);
+    z-index: 98;
+}
+
+@mixin btn_style {
+    width: 100px;
+    text-align: center;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    font-weight: 900;
+    border: none
+}
+
+;
+
+@mixin img_block {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+;
+
+@mixin line_style($color) {
+    background-color: $color;
+    height: 3px;
+    width: 150px;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 4px;
+    margin-bottom: 45px;
+}
+
+;
+
+
+@mixin container_style {
+    padding: 40px;
+    margin: 20px auto;
+    max-width: 1360px;
+    border-radius: 8px;
+    box-shadow: $boxShadow1;
+}
+
+;
+
+@mixin paraStyleCenter {
+    line-height: 30px;
+    @include setPadding(medium);
+    @include setMargin(small);
+    text-align: center
+}
+
+;
+
+
+
+@mixin paraStyleleft {
+    line-height: 30px;
+    @include setPadding(medium);
+    @include setMargin(small);
+    text-align: left
+}
+
+;
+
+
+@mixin paraStyleRight {
+    line-height: 30px;
+    @include setPadding(medium);
+    @include setMargin(small);
+    text-align: right
+}
+
+;
+
+
+
+@mixin paraStyleHeaderCenter {
+    line-height: 70px;
+    @include setPadding(large);
+    @include setMargin(medium);
+    text-align: center;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+
+
+
+
+
+
+
+@mixin para_style($color, $size, $align) {
+    color: $color;
+    font-size: $size;
+    text-align: $align;
+
+}
+
+
+// font-size
+
+@mixin setFontSize($value) {
+
+    @if $value ==xsmall {
+        font-size: 11px;
+    }
+
+    @else if $value ==small {
+        font-size: 16px;
+    }
+
+    @else if $value ==medium {
+        font-size: 20px;
+    }
+
+    @else if value==large {
+        font-size: 26px;
+    }
+
+    @else if value==xlarge {
+        font-size: 30px;
+    }
+
+    @else if value==xxlarge {
+        font-size: 40px
+    }
+
+
+}
+
+
+
+// padding
+
+
+
+@mixin setPadding($value) {
+
+    @if $value ==xsmall {
+        padding: 5px;
+    }
+
+    @else if $value ==small {
+        padding: 10px;
+    }
+
+    @else if $value ==medium {
+        padding: 15px;
+    }
+
+    @else if value==large {
+        padding: 25px;
+    }
+
+    @else if value==xlarge {
+        padding: 40px;
+    }
+
+    @else if value==xxlarge {
+        padding: 70px
+    }
+
+    @else if value==smix {
+        padding: 5px 0px
+    }
+
+    @else if value==mmix {
+        padding: 15px 10px
+    }
+
+    @else if value==lmix {
+        padding: 20px 15px
+    }
+
+
+}
+
+
+// margin
+
+
+@mixin setMargin($value) {
+
+    @if $value ==xsmall {
+        paddinmargin: 5px;
+    }
+
+    @else if $value ==small {
+        margin: 10px;
+    }
+
+    @else if $value ==medium {
+        margin: 15px;
+    }
+
+    @else if value==large {
+        margin: 25px;
+    }
+
+    @else if value==xlarge {
+        margin: 40px;
+    }
+
+    @else if value==xxlarge {
+        margin: 70px
+    }
+
+    @else if value==smix {
+        margin: 5px 0px
+    }
+
+    @else if value==mmix {
+        margin: 15px 10px
+    }
+
+    @else if value==lmix {
+        margin: 20px 15px
+    }
+
+
+}
+
+
+
+
+// p{
+//     @include setFontSize(medium)
+// }
