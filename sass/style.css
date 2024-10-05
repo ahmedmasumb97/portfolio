@@ -249,6 +249,7 @@ input-group[type=search]::placeholder {
 
 .resume-container-right {
   flex-basis: 100%;
+  margin-top: 50px;
 }
 
 .resume-title h1 {
@@ -679,7 +680,7 @@ footer {
   color: #F1F3C2;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1100px) {
   .navbar {
     display: flex;
     flex-direction: row;
